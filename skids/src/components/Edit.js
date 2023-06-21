@@ -10,7 +10,7 @@ function Edit() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState();
-  const [id , setId] = useState("");
+  const [id, setId] = useState("");
 
   let history = useNavigate();
 
@@ -20,6 +20,19 @@ function Edit() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      alert('Please enter a valid email address');
+      return;
+    }
+
+    // Validate phone number format
+    const phoneRegex = /^\d{10}$/; // Assumes 10-digit phone numbers
+    if (!phoneRegex.test(phone)) {
+      alert('Please enter a valid phone number');
+      return;
+    }
 
     let a = user[index];
     a.name = name;

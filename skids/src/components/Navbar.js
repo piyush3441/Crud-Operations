@@ -10,7 +10,7 @@ const Navbar = () => {
             <div className="container-fluid">
                 <div className="row w-75">
                     <div className="col">
-                        <Link to="/" className="navbar-brand">Skids</Link>
+                        <Link to="/" className="navbar-brand"><img src='logo.png'></img></Link>
                     </div>
                     <div className="col">
                         <div className="navbar-nav ">

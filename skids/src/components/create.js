@@ -21,7 +21,22 @@ function Create() {
     let uniqueId = ids.slice(0, 8);
 
     let a = Name, b = Email, c = phone;
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(Email)) {
+      alert('Please enter a valid email address');
+      return;
+    }
+
+    // Validate phone number format
+    const phoneRegex = /^\d{10}$/; // Assumes 10-digit phone numbers
+    if (!phoneRegex.test(phone)) {
+      alert('Please enter a valid phone number');
+      return;
+    }
     user.push({ id: uniqueId, name: a, email: b, phone: c });
+
+    
     alert("User added");
     history("/");
 
@@ -30,7 +45,7 @@ function Create() {
     <div>
       <Form className='d-grid gap-2' style={{ margin: "10rem" }}>
 
-        <h1>Create User</h1>
+        <h1>Add User</h1>
         <Form.Group className='mb-3' controlId='formName'>
           <Form.Control type="text" placeholder='Enter your name' required onChange={(e) => setname(e.target.value)}></Form.Control>
         </Form.Group>
