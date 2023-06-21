@@ -1,0 +1,16 @@
+
+
+
+.card{
+    padding: 10px;
+    border: 1px solid grey;
+    width: 15rem;
+    height: 10rem;
+    margin: 15px;
+    border-radius: 10px;
+}
+
+.card-button{
+    width: 4rem;
+
+}
